@@ -28,7 +28,7 @@ formula_file = formula_file.readlines()
 
 print("-----------------------------")
 #-----------------
-print("Select the formula to create the svg\n")
+print("Select the formula to create the csv\n")
 print('\n'.join('{}: {}'.format(*k) for k in enumerate(formula_file,start=1)))
 print("-----------------------------")
 formula = input("Formula: ")

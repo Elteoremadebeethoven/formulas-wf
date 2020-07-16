@@ -3,10 +3,12 @@ from io import *
 
 # OPTIONS
 FILE = "quadratic"
+TEX_CLASS = TexMobject
 
 SCALE = 0.016
 NUMBER_DIRECTION = DOWN
 NUMBER_BUFF = 0.01
+FORMULA_NUMBER_HEIGHT = 0.7
 # DON'T MODIFY
 TXT_FOLDER = "TXT"
 IMAGE_TEX_DIR = "IMAGES"
@@ -25,25 +27,28 @@ class PrintTeX(Scene):
     }
     def construct(self):
         texs = VGroup(*[
-            TexMobject(f) for f in formula_file
+            TEX_CLASS(f) for f in formula_file
         ])
         count = 1
         for tex in texs:
             self.scale_tex(tex)
+            formula_number = Text(f"{count}",font="Arial",stroke_width=0)\
+                .set_height(FORMULA_NUMBER_HEIGHT)
+            formula_number.to_edge(DOWN)
             sub_numbers = self.get_sub_numbers(tex)
-            self.add(tex,sub_numbers)
+            self.add(tex,sub_numbers,formula_number)
             self.update_frame(ignore_skipping=True)
             self.get_image().save(f"{FILE_JOIN}/{IMAGE_TEX_DIR}/im_{count}.png","PNG")
             self.update_frame(ignore_skipping=False)
-            self.remove(tex,sub_numbers)
+            self.remove(tex,sub_numbers,formula_number)
             count += 1
 
     def scale_tex(self, tex):
         tex_ratio = tex.get_width() / tex.get_height()
         if tex_ratio < 16/9:
-            tex.set_height(FRAME_HEIGHT / 2 - 0.7)
+            tex.set_height(FRAME_HEIGHT - 0.7)
         else:
-            tex.set_width(FRAME_WIDTH / 2 - 0.7)
+            tex.set_width(FRAME_WIDTH - 0.7)
 
     def get_sub_numbers(self, tex):
         sub_numbers = VGroup()

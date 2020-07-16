@@ -1,0 +1,15 @@
+ax^2+bx+c=0
+ax^2+bx=-c
+x^2+{b\over a}x=-{c\over a}
+x^2+{b\over a}x+\left({b\over 2a}\right)^2=-{c\over a}+\left({b\over 2a}\right)^2
+\left(x+{b\over 2a}\right)^2=-{c\over a}+\left({b\over 2a}\right)^2
+\left(x+{b\over 2a}\right)^2=-{c\over a}+{b^2\over 4a^2}
+\left(x+{b\over 2a}\right)^2={b^2\over 4a^2}-{c\over a}
+\left(x+{b\over 2a}\right)^2={b^2\over 4a^2}-{4c\over 4a}
+\left(x+{b\over 2a}\right)^2={b^2\over 4a^2}-{4ac\over 4a^2}
+\left(x+{b\over 2a}\right)^2={b^2-4ac\over 4a^2}
+\sqrt{\left(x+{b\over 2a}\right)^2}=\pm\sqrt{{b^2-4ac\over 4a^2}}
+x+{b\over 2a}=\pm\sqrt{{b^2-4ac\over 4a^2}}
+x=-{b\over 2a}\pm\sqrt{{b^2-4ac\over 4a^2}}
+x=-{b\over 2a}\pm{\sqrt{b^2-4ac}\over 2a}
+x={-b\pm\sqrt{b^2-4ac}\over 2a}
